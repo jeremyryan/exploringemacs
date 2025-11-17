@@ -1,0 +1,6 @@
+---
+title: "The_self_documenting_editor"
+date: 2025-11-16T03:45:18-05:00
+draft: true
+---
+
