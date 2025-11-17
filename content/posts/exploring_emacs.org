@@ -1,48 +1,46 @@
 ---
-title: "Exploring_emacs"
+title: "Exploring Emacs"
 date: 2025-11-16T00:29:30-05:00
 draft: true
 ---
 
-Emacs is like no other piece of software in existence. In some sense
-it is simply a text editor. There are many text editors out there, of
-various degrees of sophisitication, and on some level, Emacs is
-another member of that category. If all you are trying to do is edit a
-text file, then Emacs will do the job as well as any editor out
-there. Granted, with Emacs there is a learning curve for even basic
-editing. Mark and point? Kill and yank? What is this all about?
+Emacs is like no other piece of software in existence.
 
-Once you have the basics down, however, you will find Emacs to be a
-responsive text editor, as good as any for the task. If what you are
-most concerned about is editing configuration files on a Linux
-server, then by all means, stick with vi or vim. They are more likely
-to be available on any random system you happen to find yourself
-dealing with, and they have a nice terse set of key strokes for
-editing text.
+In some sense it is simply a text editor. There are many editors out
+there, of various degrees of sophisitication, and on some level, Emacs
+is just another member of that category. If all you are trying to do
+is edit a text file, then Emacs will do the job as well as any
+editor. Granted, with Emacs there is a learning curve for even basic
+editing tasks. Mark and point? Kill and yank? What is this all about?
 
-But editing configuration files is just the beginning when it comes to
-emacs. After you get the hang of editing text files, there are any
-number of rabbit holes you could go down about things you can do with
-Emacs. You can learn about the many major modes that make Emacs into
+If what you are most concerned about is editing configuration files on
+a Linux server, then by all means, stick with vi or vim. They are more
+likely to be available on any random system you happen to find
+yourself on, and have a nice terse set of key strokes
+for editing commands.
+
+Once you have the basics of Emacs down, however, you will find it has
+much more to offer. Start looking into what Emacs can do, and you will
+find any number of rabbit holes to go down, some of them far removed
+from what you might think is in scope for an editor. Emacs can be
 anything from a calculator to a terminal emulator to a Tetris clone.
 
-It should be pointed out in this inaugural post that I am not an Emacs
-expert. I have been using it for more than a decade, and feel very
-comfortable within it, but I have never contributed source code to the
-project or published an Emacs Lisp library. This is not a matter of me
-being an expert but of being an enthusiast, someone who wants to learn
-about all the things that Emacs can do, and that you can do with
-Emacs. And so the purpose of this blog is to give me the opportunity
-to explore various aspects of Emacs, to scurry down one rabbit hole
-after another and report on what I find.
+It should be pointed out in this inaugural post that I am an Emacs
+enthusiast but not an expert. I have been using it for more than a
+decade, and feel very comfortable within it, but there is a long way
+to go still in understanding and mastering what it is capable of. This
+blog is meant as "show and tell", to give me a reason to explore this
+labyrinth of an editor, to scurry down one rabbit hole after another
+and report on what I find.
 
 Topics that I may address in this blog, in no particular order:
 
-* Emacs history
-* Basic usage
-* Emacs Lisp programming
-* Major and minor mode development
-* Fun and games with Emacs
+- Emacs history
+- Basic usage
+- Emacs Lisp programming
+- Major and minor mode development
+- Fun and games
+- Org-mode
 
-
-
+If any of that sounds interesting, I hope you are ready to follow along
+with me as I go exploring Emacs.
