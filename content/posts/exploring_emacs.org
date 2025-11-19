@@ -1,7 +1,7 @@
 ---
 title: "Exploring Emacs"
 date: 2025-11-16T00:29:30-05:00
-draft: true
+draft: false
 ---
 
 Emacs is like no other piece of software in existence.
@@ -23,7 +23,8 @@ Once you have the basics of Emacs down, however, you will find it has
 much more to offer. Start looking into what Emacs can do, and you will
 find any number of rabbit holes to go down, some of them far removed
 from what you might think is in scope for an editor. Emacs can be
-anything from a calculator to a terminal emulator to a Tetris clone.
+anything from a calculator to a terminal emulator to a Tetris
+clone. Like Walt Whitman, Emacs contains multitudes. 
 
 It should be pointed out in this inaugural post that I am an Emacs
 enthusiast but not an expert. I have been using it for more than a
