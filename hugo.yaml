@@ -1,0 +1,6 @@
+baseURL: 'https://exploringemacs.org/'
+languageCode: 'en-us'
+title: 'Exploring Emacs'
+module:
+  imports:
+    - path: "github.com/hugo-sid/hugo-blog-awesome"
