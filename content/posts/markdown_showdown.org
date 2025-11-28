@@ -1,0 +1,7 @@
+---
+title: "Markdown Showdown: Markdown Versus Org Mode"
+date: 2025-11-23T18:11:23-05:00
+draft: true
+---
+
+Markdown is become a kind of [schelling point](https://en.wikipedia.org/wiki/Focal_point_(game_theory)) in the world of lightweight markup languages. 
