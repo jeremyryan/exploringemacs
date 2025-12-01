@@ -19,41 +19,40 @@ the oldest high level languages, having been originally conceived of
 by AI pioneer [[https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)][John McCarthy]] in the late 1950's, and then going on to
 being the primary programming language of AI research at universities
 for decades. More than a language, it really is a whole evolutionary
-branch of languages. While most modern languages trace a historical
-lineage to Algol, Lisp is ancient enough to have spawned off its own
-lineage of languages. Its history includes some major programming
-language innovations, such as automatic memory management (AKA garbage
-collection), anonymous functions and lexical scoping.
+branch of languages. While most modern languages trace a geneology
+going back to Algol, Lisp is ancient enough to have spawned off its
+own lineage of languages. Its history includes some major programming
+language innovations, such as automatic memory management--AKA garbage
+collection, anonymous functions and lexical scoping.
 
-The major surviving examples of Lisps today are [[https://en.wikipedia.org/wiki/Common_Lisp][Common Lisp]], which was
-an attempt at creating a specification to unify the various
+The major surviving instances of Lisps today are [[https://en.wikipedia.org/wiki/Common_Lisp][Common Lisp]], which
+was an attempt at creating a specification to unify the various
 implementations in use at various university research departments;
-[[https://www.scheme.org/][Scheme]], developed by Gerald Sussman and Guy Steele at MIT, a stripped
-down language that incorporated the important feature of lexical
-variable scope to the Lisp world; [[https://clojure.org/][Clojure]], a newer addition to the
-fold, created by [[https://en.wikipedia.org/wiki/Rich_Hickey][Rich Hickey]] as a way to bring Lisp to the JVM; and
-[[https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html][Emacs Lisp]], or elisp, the scripting language for the Emacs editor.
+[[https://www.scheme.org/][Scheme]], developed by [[https://en.wikipedia.org/wiki/Gerald_Jay_Sussman][Gerald Jay Sussman]] and [[https://en.wikipedia.org/wiki/Guy_L._Steele_Jr.][Guy Steele]] at MIT, a
+stripped down language that incorporated the important feature of
+lexical variable scope; [[https://clojure.org/][Clojure]], a newer addition to the fold, created
+by [[https://en.wikipedia.org/wiki/Rich_Hickey][Rich Hickey]] as a way to bring Lisp to the JVM; and [[https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html][Emacs Lisp]], or
+elisp, the scripting language for the Emacs editor. Then there are a
+plethora of less well known implementations, because Lisp, and
+especially Scheme, is the kind of language that can realistically be
+implemented by an individual or small group.
 
-Then there are a plethora of less well known implementations, because
-Lisp, and especially Scheme, is the kind of language that can
-realistically be implemented by an individual or small group. To
-continue the language family metaphor, Common Lisp is like a language
-that has become massively complex as it has accumulated special cases
-over its lifetime, while Scheme is a [[https://en.wikipedia.org/wiki/Pidgin][pidgin]] language that has been
-stripped down to its essentials. Clojure is the one modern Lisp that
-has managed to see some amount of commercial adoption, being a
-re-thinking of what a Lisp could be based on current idioms and
-running on the ubiquitous JVM. It also incorporates some nice
-functional programming ideas.
-
-Then there is elisp, a language whose habitat is limited to the Emacs
-editor, and is a large part of what makes it so powerfull.
+To continue the language family metaphor, Common Lisp is like a
+language that has become massively complex as it has accumulated
+special cases over its lifetime, while Scheme is a [[https://en.wikipedia.org/wiki/Pidgin][pidgin]] language
+that has been stripped down to its essentials. Clojure is the one
+modern Lisp that has managed to see some amount of commercial
+adoption, being a re-thinking of what a Lisp could be based on current
+idioms and running on the ubiquitous JVM. It also incorporates some
+nice functional programming ideas. Then there is elisp, a language
+whose habitat is limited to the Emacs editor, and a large part of
+what makes it so powerfull.
 
 Writing code requires an editor—that is as fundamental as it gets in
 the world of programming. (For today let us ignore the fact that we
-now have coding agents helping us with the job of producing code. AI
-with Emacs is a topic for another day.) I wouldn't want to write code
-in Microsoft Notepad, but if I had to I could, because it lets you put
+now have coding agents taking on the job of producing code. AI with
+Emacs is a topic for another day.) I wouldn't want to write code in
+Microsoft Notepad, but if I had to I could, because it lets you put
 text in a file and that's what code is, or at least that's what it
 starts out as. But the editor is a piece of software like any other,
 implemented in code. In most editors, there is a facility for
@@ -95,28 +94,28 @@ and naturally that kind of permissiveness was only possible in a
 pre-internet world.
 
 I bring this up because Emacs, as a Lisp system, is a kind of survival
-of this way of doing things. But while such a permissive system is not
-what we want in an operating system, Emacs is not an OS, despite the
-old joke about it being an OS in need of a good editor. Because it is
-both Lisp system and editor, you can augment and update any part of
-the system without ever having to leave it, and that makes Emacs a
-uniquely malleable material, in a way that no other software system
-that I am aware of is.
+of the Lisp Machine way of doing things. But while such a permissive
+system is not what we want in an operating system, Emacs is not an OS,
+despite the old joke about it being an OS in need of a good
+editor. Because it is both Lisp system and editor, you can augment and
+update any part of the system without ever having to leave it, and
+that makes Emacs a uniquely malleable material, in a way that no other
+software system that I am aware of can claim.
 
 The thin barrier between language and editor shows up in all kinds of
 places. You can run any Lisp expression with ~M-:~. You can evaluate
-any code typed into the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Interaction.html][~*scratch*~]] buffer, redefinining a function as
-many times as required to get it right. You can customize your
-environment with additions that range from keyboard macros to whole
-elisp-based applications. It means that you can bring up the
-documentation for any function or variable, whether standard Emacs or
-third-party, with a few keystrokes. There really is nothing else like
-it, and it is one of the reasons that this text editor has had such a
-successful career, outliving a thousand competitors.
+any code typed into the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Interaction.html][~*scratch*~]] buffer, redefinining and running a
+function as many times as required to get it right. You can customize
+just about anything in your environment, with additions that range
+from keyboard macros to whole elisp-based applications. You can bring
+up the documentation for any function or variable, whether standard
+Emacs or third-party, with a few keystrokes. There really is nothing
+else like it, and it is one of the reasons that this text editor has
+had such a successful career, outliving a thousand competitors.
 
 So far we have stayed in the land of theory, and this is meant to be a
 practical blog where you can learn how to use Emacs along with me. So
 let us end here, and the next time we meet, it will be to discuss the
 details of how to get things done with Emacs. The goal is to publish a
-new post every other week. Will our intrepid hero be up to such a
-challenge? Tune in two weeks from now to find out!
+new post every other week. Will our intrepid blogging hero be up to
+such a challenge? Tune in two weeks from now to find out!
