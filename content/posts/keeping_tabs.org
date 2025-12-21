@@ -5,17 +5,18 @@ draft: false
 ---
 
 I have a hazy memory of the first time I ever fired up Emacs, not
-knowing my Meta key from my elbow. That was a long time ago now,
-but I vaguely recall the experience of not knowing how to do the
-simplest thing, followed by many months of slowly developing fluency,
-building up my mental model of how Emacs works and my muscle memory of
-keystrokes.
+knowing my Meta key from my elbow. That was a long time ago now, but I
+vaguely recall the experience of not knowing how to do the first
+thing, not even opening a file, followed by many months of slowly
+developing fluency, building up my mental model of how Emacs works and
+my muscle memory of keystrokes.
 
 While Emacs contains immense potential for the experienced user, there
-is a steep hill to climb before you can do some fairly simple
-editing tasks. Fortunately it is the self-documenting editor, so
-everything you need to know to use it is right there in Emacs itself. But then
-of course you first have to learn its documentation features.
+is an initial investment of time and energy required before you can do
+even fairly simple editing tasks. Fortunately it is the
+self-documenting editor, so everything you need to know to use it is
+right there in Emacs itself. But then of course you first have to
+learn its documentation features.
 
 Over the years, the Emacs maintainers have taken steps to present a
 more familiar face to this strange beast, adding modern interface
@@ -179,7 +180,8 @@ work, add the following:
 #+END_SRC
 
 ** Next Up
-Tabs are a nice, practical feature to be aware of. What is next on our
-Exploring Emacs journey? Learn some elisp programming? A useful major
-mode? Some obscure but cool feature? There are so many
-possibilities. I'm a kid in a candy store. Until next time!
+Tabs are a  nice, practical feature to have in your Emacs
+arsenal. What is next on our Exploring Emacs journey? Learn some elisp
+programming? A useful major mode? Some obscure but cool feature? There
+are so many possibilities. I'm a kid in a candy store. Until next
+time!

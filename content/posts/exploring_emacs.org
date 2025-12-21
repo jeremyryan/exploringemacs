@@ -19,12 +19,19 @@ likely to be available on any random system you happen to find
 yourself on, and have a nice terse set of key strokes
 for editing commands.
 
-Once you have the basics of Emacs down, however, you will find it has
-much more to offer. Start looking into what Emacs can do, and you will
-find any number of rabbit holes to go down, some of them far removed
-from what you might think is in scope for an editor. Emacs can be
-anything from a calculator to a terminal emulator to a Tetris
-clone. Like Walt Whitman, Emacs contains multitudes. 
+If you are doing day-to-day development, use Visual Studio
+Code. I use it everyday at my day job. Lots of people do. Or
+Neovim. I've never messed with it, but lots of people seem to like
+it. Nano, Pico, Sublime Text, Notepad++, whatever gets the job done.
+
+Emacs is, in a sense, a text editor like all of those. But its unique
+properties make it something more than that. It is, in a way, its own
+world, with its own vocabulary and development ecosystem. Start looking
+into what Emacs can do, and you will find any number of rabbit holes
+to go down, some of them far removed from what you might think is in
+scope for an editor. Emacs can be anything from a calculator to a
+terminal emulator to a Tetris clone. Like Walt Whitman, Emacs contains
+multitudes.
 
 It should be pointed out in this inaugural post that I am an Emacs
 enthusiast but not an expert. I have been using it for more than a
