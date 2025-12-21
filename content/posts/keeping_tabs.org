@@ -2,6 +2,8 @@
 title: "Keeping Tabs With Emacs"
 date: 2025-12-06T12:12:33-05:00
 draft: false
+categories:
+- Beginner
 ---
 
 I have a hazy memory of the first time I ever fired up Emacs, not

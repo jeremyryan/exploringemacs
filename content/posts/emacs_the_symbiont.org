@@ -2,6 +2,9 @@
 title: "Emacs the Symbiont"
 date: 2025-11-20T04:06:15-05:00
 draft: false
+tags:
+- Emacs History
+- Lisp Machines
 ---
 
 One thing that makes Emacs stand out as an editor and a software
