@@ -1,10 +1,10 @@
-#+TITLE: Ibuffer Mode: Take Control of Your Buffers
+#+TITLE: Take Control of Your Buffers With Ibuffer Mode
 #+DATE: 2026-01-17T18:24:41-05:00
 #+DRAFT: false
 
 Last time we met, I discussed how Emacs's Tab Mode is a useful
 organizational tool. Exciting stuff! And today I will be continuing
-the excitment by discussing one of my annoyances with Emacs, and how
+the excitement by discussing one of my annoyances with Emacs, and how
 to handle it.
 
 * Buffer Bloat
@@ -15,28 +15,26 @@ to and output from an interactive shell.
 
 As your Emacs session goes on, as you visit files and run programs and
 do all the things you can do with it, buffers start piling up. They
-seem to come from nowhere, and before you know it, you have a pile of
-buffers right in the middle of your living room. You find them behind
-the couch, under your bed, you trip over them in the hall. And then
-when you need to switch back to a buffer that you last looked at the
-day before, you have that whole pile to dig through to find the one
-you want.
+seem to come from nowhere, and before you know it, you are finding
+them behind the couch, under your bed, you trip over them in the
+hall. And then when you need to switch back to a buffer that you last
+looked at the day before, you have to sift through that pile to find
+the one you want.
 
-A quick ~C-x C-v~ brings up Emacs's default buffer manager, Buffer
-Menu mode. It is a fairly straight-forward mode, which lists all open
+A quick ~C-x C-b~ brings up Emacs's default buffer manager, Buffer
+Menu mode. It is a fairly straightforward mode, which lists all open
 buffers, allows you to jump to any particular one, to save or delete a
-set of buffers, and other basic tasks. Good enough for the beginner,
-just getting started on their Emacs journey.
+set of buffers, and other basic tasks. Good enough when getting
+started with Emacs.
 
 #+CAPTION: A regular old Buffer Mode buffer
 [[/images/buffer_mode_buffer.png]]
 
-But once you've been working in Emacs long enough, as your open
-buffers have started stacked up to the ceiling, Buffer Menu mode no
-longer cuts it. The more clothes you have, the more you are in need of
-a way to organize them, to put them away into drawers, to have a
-system that makes sense out of the chaos. And the same is true for
-your buffers.
+But once you've been working in Emacs long enough and your open
+buffers start piling up, Buffer Menu mode no longer cuts it. The more
+clothes you have, the more you are in need of a way to organize them,
+to put them away into drawers, to have a system that makes sense out
+of the chaos. And the same is true for your buffers.
 
 * Ibuffer Mode
 Fortunately, Emacs provides a better alternative, called Ibuffer Mode,
@@ -81,18 +79,18 @@ set.
 [[/images/ibuffer_marked_buffers.png]]
 
 Want to delete a set of buffers all at once? Mark them for deletion by
-moving point to each and hitting ~d~, then hit ~x~. Want to execute a
-search through multiple buffers at one time?  Mark each on then hit
-~M-s a C-s~ and start typing your search term. There are also commands
-to do search and replace operations, or to evaulate a lisp form in
-each. And as always, a simple ~C-h m~ brings up the mode's help buffer
-so you can get all the details.
+moving point to each and hitting ~d~, then hit ~x~. Want to execute an
+incremental search through multiple buffers at one time?  Mark each
+one then hit ~M-s a C-s~ and start typing your search term. There are
+also commands to do search and replace operations, or to evaluate a
+lisp form in each. And as always, a simple ~C-h m~ brings up the
+mode's help buffer so you can get all the details.
 
 ** Filtering
 Next we have filtering, which does just what it sounds like, narrowing
-down the set of displayed buffers according to a user-specified
+down the set of displayed buffers according to user-specified
 criteria. Ibuffer mode filters have all the power you would expect
-from Emacs, with miriad options for kinds of filters to all, as well
+from Emacs, with myriad options for kinds of filters to all, as well
 as the ability to compose filters in sophisticated ways.
 
 Filtering commands are all prefixed with a slash: ~/~, followed by a
@@ -103,12 +101,12 @@ directory, modified status, file extension, and other options.
 Beyond the application of a simple filter is where things get
 interesting, because filters can be combined in a stack which are
 applied one after the other, and the filter stack can be manipulated
-to provide different views of your set of open bufferes.
+to provide different views of your set of open buffers.
 
 For example, let's say you want to filter your buffer list down to
-just the "*starred*" buffers, the ones that are by convention marked
-or "ear-muffed" by the start or asterisk symbol to indicate that they
-were created by Emacs itself. Hit ~/ *~ to apply that filter:
+just the "starred" buffers, the ones that are by convention surrounded
+by the asterisk symbol to indicate that they were created by Emacs
+itself. Hit ~/ *~ to apply that filter:
 
 
 #+CAPTION: Applying the starred buffer filter
@@ -124,21 +122,21 @@ is empty since there are no filters that pass both tests:
 #+CAPTION: Applying both filters
 [[/images/ibuffer_org_mode_buffer_filter.drawio.svg]]
 
-#+CAPTION: No buffers are left after appling both filters
+#+CAPTION: No buffers are left after applying both filters
 [[/images/ibuffer_both_filters.png]]
 
 
 What you want is to apply both filters separately and combine the
 results, combining them with a logical "or" operations. And that is as
-easy as htting ~/ |~.
+easy as hitting ~/ |~.
 
-#+CAPTION: Getting the or'd results of both filters
+#+CAPTION: Getting the OR'd results of both filters
 [[/images/ibuffer_starred_or_org_mode_filter.drawio.svg]]
 
 #+CAPTION: The buffer list with both filters applied with a logical `or`
 [[/images/ibuffer_combined_filters.png]]
 
-And'ing filters together is also possible with ~/ &~.
+AND'ing filters together is also possible with ~/ &~.
 
 That is a simple example of what is possible in terms of applying
 filters to your buffer list, and of course there is plenty more to
@@ -154,7 +152,7 @@ and re-apply it.
 
 Earlier I pointed out the groups that buffers are sorted into in the
 screenshots. This is accomplished with what Ibuffer Mode refers to as
-"filter groups", which is somewhat confusing since this is about
+"filter groups", a somewhat confusing term since this is about
 grouping buffers by various criteria rather than filtering them out,
 but it seems that the naming is based on the fact that it uses the
 same predicates for grouping buffers as it does for filtering them.
@@ -168,12 +166,12 @@ hitting ~RET~ with point on a group label. Also similar to filters,
 groups can be named and saved for applying later with ~/ g~ and ~/ R~.
 
 ** Sorting
-Lastly there is sorting buffers, a pretty straight-forward concept
-which we do not need to spend much time with, other than to point out
-that the different sorting options are applied by hitting ~s~ followed
-by a key to apply a specific sorting scheme. For example, hit ~s a~ to
-sort lexicographically. You can flip between the different sorting
-options by hitting ~,~ (comma) repeatedly.
+Lastly there is sorting buffers, which we will not spend too much time
+with other than to point out that the different sorting options are
+applied by hitting ~s~ followed by a key to apply a specific sorting
+scheme. For example, hit ~s a~ to sort lexicographically. You can flip
+between the different sorting options by hitting ~,~ (comma)
+repeatedly.
 
 * Runner-Up Buffer Modes
 In my exploration of buffer management in Emacs, I've discovered that
@@ -191,11 +189,26 @@ There you have it, another way to make your Emacs experience
 better. Since you are always working with buffers in Emacs, a better
 buffer handler is a big help.
 
-Add the following to your ~init.el~ file to make Ibuffer Mode your
-default buffer wrangler:
+Below is some elisp code to get you started with Ibuffer mode, taken
+mostly right from the Emacs Wiki:
 
 #+begin_src elisp
+  ; Use Ibuffer Mode as the default buffer handler
   (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+  ; Add a saved filter group to apply to your Ibuffer menu
+  (setq ibuffer-saved-filter-groups
+        '(("Home"
+       	  ("Dired" (mode . dired-mode))
+    	  ("Customizations" (mode . custom-mode))
+    	  ("Org Mode" (or (filename . ".org") (mode . org-mode)))
+    	  ("Starred" (starred-name)))))
+
+  ; Apply your saved filter group automatically when opening
+  ; Ibuffer Mode
+  (add-hook 'ibuffer-mode-hook
+    	  (lambda ()
+    	    (ibuffer-switch-to-saved-filter-groups "Home")))
 #+end_src
 
 * References
