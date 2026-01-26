@@ -7,31 +7,30 @@ draft: false
 Emacs is like no other piece of software in existence.
 
 In some sense it is simply a text editor. There are many editors out
-there, of various degrees of sophisitication, and on some level, Emacs
-is just another member of that category. If all you are trying to do
-is edit a text file, then Emacs will do the job as well as any
-editor. Granted, with Emacs there is a learning curve for even basic
-editing tasks. Mark and point? Kill and yank? What is this all about?
+there, of various degrees of sophisitication. If you are just trying
+to edit configuration files on a Linux server, then by all means,
+stick with vi or vim. They are more likely to be available on any
+random system you happen to find yourself on, and have a nice terse
+set of key strokes for editing commands. If you are doing day-to-day
+development, use Visual Studio Code. I use it everyday at my day
+job. Lots of people do. Or Neovim. I've never messed with it, but lots
+of people seem to like it. Nano, Pico, Sublime Text, Notepad++,
+whatever gets the job done.
 
-If what you are most concerned about is editing configuration files on
-a Linux server, then by all means, stick with vi or vim. They are more
-likely to be available on any random system you happen to find
-yourself on, and have a nice terse set of key strokes
-for editing commands.
+On some level, Emacs is just another member of that category. If all
+you are trying to do is edit a text file, then Emacs will do the job
+as well as any editor. Granted, with Emacs there is a learning curve
+for even basic editing tasks. Mark and point? Kill and yank? What is
+this all about?
 
-If you are doing day-to-day development, use Visual Studio
-Code. I use it everyday at my day job. Lots of people do. Or
-Neovim. I've never messed with it, but lots of people seem to like
-it. Nano, Pico, Sublime Text, Notepad++, whatever gets the job done.
-
-Emacs is a text editor, like any of those, but it is also something
-moreo. It is, in a way, its own world, with its own vocabulary and
-development ecosystem. Start looking into what Emacs can do, and you
-will find any number of rabbit holes to go down, some of them far
-removed from what you might think is in scope for an editor. Emacs can
-be anything from a calculator to a terminal emulator to a Tetris
-clone. Like Walt Whitman, Emacs contains multitudes. And it is this
-world that I will be exploring in this blog.
+But Emacs transcends simple editorhood. It is, in a way, its own
+world, with its own vocabulary and development ecosystem. Start
+looking into what Emacs can do, and you will find any number of rabbit
+holes to go down, some of them far removed from what you might think
+is in scope for an editor. Emacs can be anything from a calculator to
+a terminal emulator to a Tetris clone. Like Walt Whitman, Emacs
+contains multitudes. And it is this world that I will be exploring in
+this blog.
 
 It should be pointed out in this inaugural post that I am an Emacs
 enthusiast but not an expert. I have been using it for more than a
