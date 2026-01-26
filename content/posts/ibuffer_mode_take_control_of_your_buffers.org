@@ -181,8 +181,8 @@ buffer-selection-menu and electric-buffer-menu, which can be be
 accessed with ~M-x bs-show~ and ~M-x electric-buffer-list~,
 respectively. Both of these sit somewhere between buffer-menu and
 ibuffer modes in terms of what they offer the Emacs user, and so I
-don't think there is any reason to go into here, but mention just to
-complete the picture.
+don't think there is any reason to go into them here, but mention them
+just to complete the picture.
 
 * Conclusion
 There you have it, another way to make your Emacs experience
