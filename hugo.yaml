@@ -1,6 +1,9 @@
 baseURL: 'https://exploringemacs.org/'
 languageCode: 'en-us'
 title: 'Exploring Emacs'
+author:
+  name: "Jeremy Ryan"
+  email: "jeremyryan000@gmail.com"
 module:
   imports:
     - path: "github.com/hugo-sid/hugo-blog-awesome"
