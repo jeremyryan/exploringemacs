@@ -103,7 +103,7 @@ their layout. Being the programmable editor that it is, you could
 certainly script this out in elisp, but what if there were a more
 general way to switch between multiple sets of window configurations?
 
-#+CAPTION: Different window layouts
+#+CAPTION: Different window layouts in separate frames
 [[/images/Emacs_window_config.drawio.svg]]
 
 ** A Better Way 
@@ -128,7 +128,7 @@ functionality was previously provided by various elisp packages, but
 in any case, it is so useful that it makes sense to include it out of
 the box.
 
-#+CAPTION: Windows grouped by tabs
+#+CAPTION: Multiple tabs with different window layouts
 [[/images/Emacs_tabs.drawio.svg]]
 
 Really the interface of tab-like boxes at the top of the screen is not
@@ -184,4 +184,4 @@ arsenal, which help to juggle multiple windows layouts. But because
 windows are not closely tied to buffers, managing your windows is not
 the same things as managing the pile of buffers that tend to
 accumulate in an extended Emacs session. In the next post, I will go
-over IBuffer mode as buffer management tool.
+over IBuffer mode as a buffer management tool.
