@@ -138,10 +138,11 @@ layouts, which like everything else in Emacs can all be done using the
 keyboard, using a set of key bindings similer to the ones used to
 navigate windows. You can create new tabs with ~C-x t 2~, close the
 current tab with ~C-x t 0~, and switch between them with ~C-<tab>~ and
-~C-S-<tab>~ selecting the next and previous tabs,
-respectively. Seemingly a simple feature, but one that I personally
-have found a welcome change from digging through the buffer list each
-time I want to switch to a different task.
+~C-S-<tab>~ selecting the next and previous tabs, respectively. By
+default, tabs are labeled with the name of the currently active buffer
+within that tab, but it is useful to apply a name based on what you
+have the tab configured for, which you can do with ~C-x t r <tab name>
+<RET>~.
 
 ** The Tab Line
 
@@ -178,10 +179,14 @@ work, add the following:
   (scroll-bar-mode 0)
 #+END_SRC
 
+** Resources
+
+- [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html][Online documentation for Emacs tab bars]]
+
 ** Next Up
-Tabs are a  nice, practical feature to have in your Emacs
-arsenal, which help to juggle multiple windows layouts. But because
-windows are not closely tied to buffers, managing your windows is not
-the same things as managing the pile of buffers that tend to
-accumulate in an extended Emacs session. In the next post, I will go
-over IBuffer mode as a buffer management tool.
+Tabs are a nice, practical feature to have in your Emacs arsenal,
+which help to juggle multiple windows layouts. But because windows are
+not closely tied to buffers, other means are required for managing the
+many buffers that will inevitably accumulate over an extended Emacs
+session. To address that, in the next post I will cover [[/posts/ibuffer_mode_take_control_of_your_buffers/][IBuffer mode]]
+as a buffer management tool.
