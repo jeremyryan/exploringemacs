@@ -1,0 +1,59 @@
+---
+title: "Emacs_for_cheating"
+date: 2026-03-25T21:30:26-04:00
+draft: true
+---
+
+If you interact with a command line daily, there are certain commands
+that you type so frequently that they migrate into your fingertips, so
+to speak, so that as soon as you need them, your fingers produce them
+without any though on your part. These are the basic commands that
+navigate the filesystem and manipulate files: cd, ls, rm. Besides the
+commands you will have memorized a certain set of arguments for each
+for certain situations. But a look at the man page for any of these
+basic commands will reveal a number of arguments that effect their
+behavior that you may rarely or never have used before, not to mention
+environment variables and config files.
+
+The usability expert Alan Cooper, in his book About Face, described
+the concept of the permanent intermediary, the average user of any
+system, who quickly advances from begineer to get to the point where
+they know enough to accomplish what they need, and then stop
+there. That is most of us most of the time; I can use Word or Excel or
+Powerpoint when I need to, but I'm sure that each of these
+applications have hundreds of features that I simply have not had the
+time or need to master. And that is fine, there is no need to be an
+expert at everything. Similarly, for command line applications that
+you use every day, there are options that you may have never had a
+need for.
+
+Then there are the commands that you need in just certain situations,
+not enough to have them memorized, but when you do need them, you
+really need them. You find yourself in a situation that you never
+wanted to find yourself in again, but you remember last time there was
+that one command that fixed everything. What was it? How did I even
+find it? Was it in a man page or something you found on stack
+overflow? Was it something you found in some obscure forum that isn't
+even online anymore? All of these are possible.
+
+To keep yourself out of this kind of situation, you need a way to keep
+those rarely used commands available for the times when they are
+sorely missed. Fortunately, as the Emacs use you are, you have just
+the thing available! But as you would expect, making it work for you
+will take a little time spent with setting up the right configuration
+and learning the key bindings.
+
+Specifically, what comes in handy in these situations is org-mode's
+capture template feature. If none of that makes sense to you, I will
+provide some brief background.
+
+# Org Mode
+
+Emacs's org-mode is the native structured text format in the Emacs
+ecosystem, serving much the same purpose that Markdown does for the
+rest of the wide world. Naturally, Emacs works with Markdown nicely as
+well, but org-mode is well established in the Emacs world, and an
+Emacs user is well served by learning it and the myriad modes that
+make use of data structured as org-mode files.
+
+
