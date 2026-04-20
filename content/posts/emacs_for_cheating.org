@@ -23,7 +23,7 @@ ask your favorite LLM to search its vast stores of knowledge to
 surface the right command for your situation.
 
 Between the commands that you have made part of your repertoire
-through constant use adn the ones you can track down when the need
+through constant use and the ones you can track down when the need
 arises, there are the ones that you need in certain, specific
 situations, not enough to have them memorized, but when you do need
 them, it is for something important enough that you don't want to have
