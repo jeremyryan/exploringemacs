@@ -3,8 +3,8 @@ title: "Emacs for Cheating"
 date: 2026-03-25T21:30:26-04:00
 ---
 
-If for you, like me, rarely go through day when you don't spend at
-least some of it typing away at a command line, there are certain
+If you, like me, rarely go through a day in which you don't spend at
+least some time typing away at a command line, there are certain
 commands you use so frequently that they migrate into your fingertips.
 The terse, cryptic syntax of the CLI tools eventually become as
 natural and frictionless as speaking. But even the CLI tools you use
