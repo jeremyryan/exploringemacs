@@ -3,16 +3,17 @@ title: "Emacs for Cheating"
 date: 2026-03-25T21:30:26-04:00
 ---
 
-If you are like me and it is a rare day when you don't spend at least
-some of it typing away at a command line, there are certain commands
-you use so frequently that they migrate into your fingertips, becoming
-as natural and frictionless as speaking. But even the CLI tools you
-use every day likely support options that you may have never had a
-need for.  Whatever your level of proficiency at the command line, it
-is gained not by mastering every command, or even any specific
-command. Rather, it is a matter of repetition, of learning what works
-for different situations that reoccur regularly, and of developing
-many individual habits that together constitute a skill set.
+If for you, like me, rarely go through day when you don't spend at
+least some of it typing away at a command line, there are certain
+commands you use so frequently that they migrate into your fingertips.
+The terse, cryptic syntax of the CLI tools eventually become as
+natural and frictionless as speaking. But even the CLI tools you use
+every day likely support options that you never have a need for.
+Whatever your level of proficiency at the command line, it is gained
+not by mastering every command, or even any specific command. Rather,
+it is a matter of repetition, of learning what works for different
+situations that reoccur regularly, and of developing many individual
+habits that together constitute a skill set.
 
 You learn ~ls~ and a few of the arguments that modify its
 output, but you don't memorize the ~ls~ man page. And that is fine,
@@ -25,37 +26,33 @@ surface the right command for your situation.
 Between the commands that you have made part of your repertoire
 through constant use and the ones you can track down when the need
 arises, there are the ones that you need in certain, specific
-situations, not enough to have them memorized, but when you do need
-them, it is for something important enough that you don't want to have
-to go hunting them down.
-
-These are the ones that got you out of some situation you never wanted
-to be in again, when something important has gone missing or some
-process is stalling and you don't know why. You remember last time
-there was that one command that fixed everything. What was it?  How
-did I even find it?  Was it in a man page or something you found on
-Stack Overflow? Did you come across it in some obscure forum that no
-longer even exists?
+situations. You don't use them enough to have them memorized, but when
+you do need them, it is for something important enough that you don't
+want to have to go hunting them down. These are the ones that got you
+out of some situation you never wanted to be in again, when something
+important has gone missing or some process is stalling and you don't
+know why. You remember last time there was that one command that fixed
+everything. What was it? How did I even find it?  Was it in a man
+page, or something I found on Stack Overflow? Did I come across it
+in some obscure forum that no longer even exists?
 
 What you need in this kind of situation is a cheatsheet, a place where
 you can stash all your useful code snippets to reference later when
 they are sorely needed. Fortunately, being the Emacs user you are, you
 have just the thing available! But as you would expect, making it work
 for you will require some time spent with configuration and learning
-the key bindings.
+key bindings.
 
 Here we are going to talk about a specific feature of Emacs org-mode,
 called capture templates, that allows you to capture those useful
-commands just when you need them, where they will be easily
-accessible. But first a little background.
+commands and stash them somewhere they will be easily accessible just
+when you need them. But first a little background.
 
-* Capturing Code with Org Mode
-
-** Org Mode
+* Org Mode
 
 Emacs's org-mode defines a text markup format serving much the same
-purpose that Markdown does for the rest of the world. Like Markdown,
-an org-mode file consists of semi-structured text, including headers,
+purpose as the much more widely known Markdown. Like Markdown, an
+org-mode file consists of semi-structured text, including headers,
 text formatting, lists and links. So why not just use Markdown? It is
 after all basically the /de facto/ standard of semi-structured text in
 the computing world, it is simple and widely supported, so why learn
@@ -77,7 +74,7 @@ and publishing.
 One of those useful extensions based on org-mode is the capture
 functionality. This is a simple function that allows you to quickly
 stash away notes in a known location for later review. This allows you
-to capture ideas, code snippets, URLs or anything else you don't have
+to capture ideas, code snippets, link or anything else you don't have
 the time to explore or use immediately but which you don't want to
 lose track of.
 
@@ -89,24 +86,27 @@ see a buffer with a few default options:
 
 By default, your options are limited to capturing a "Task", opening
 the customization interface for org-capture-templates, or closing out
-the capture interface. Press ~t~ to capture a task, and you are now in
-a new buffer with a header, a TODO item, a timestamp, and point placed
-so that you can fill in a description of the task you are adding to
-your list.
+the capture interface.
+
+Let's try adding a task. Press ~t~ and you are
+now in a new buffer with a header, a TODO item, a timestamp, and point
+placed so that you can fill in a description of the task you are
+adding to your list.
 
 [[/images/org_capture_task.png]]
 
-Hit ~C-c C-c~ and your new task is filed away for later in the file
-set in the ~org-default-notes-file~ variable—by default ~/.notes—under
-the Tasks header. Pretty simple, pretty useful. Stash away tasks as
-you think of them for later with a few keystrokes.
+Hit ~C-c C-c~ to save your entry and return to whatever you were
+previously doing. Your new task is now filed away for later. Where
+exactly that is is determined by the value  of the
+~org-default-notes-file~ variable, by default ~/.notes.
 
-But this is Emacs, and so that is just the beginning of what is
-possible. Capturing tasks as you think them up is a useful feature,
-but you can easily imagine other pieces of information you might want
-to capture, in different places and including different
-information. And so org-mode provides a way to define your own capture
-templates. Let's look at how that is done.
+Pretty simple, pretty useful. Stash away tasks as you think of them
+for later with a few keystrokes. But this is Emacs, and so that is just
+the beginning of what is possible. Capturing tasks as you think them
+up is a useful feature, but you can easily imagine other pieces of
+information you might want to capture, in different places and
+including different information. And so org-mode provides a way to
+define your own capture templates. Let's look at how that is done.
 
 ** Capture Templates
 
@@ -121,25 +121,24 @@ represented as a list:
   headings, list items, checkbox items, a row in a table or as plain
   text, each specified with a keyword value. We will focus on entering
   headings, for which the keyword is "entry".
-- *Target*: specifies where in the template file the new captured
-  text should be placed. There are a number of possible options, the
-  simplest of which is with the syntax ~(file "path/to/file")~.
-- *Template*: this is the actual string that will be inserted when you
-  use org-capture. Templates are "expanded" when inserted into a file,
-  such that certain characters sequences are dynamically replaced at
-  the time that you insert the template content, using a kind of
-  mini-templating language for specifying parameters such as where
-  point is placed within the file, what text should be supplied by
-  prompting the user, where timestamps should be inserted, and other
-  options.
+- *Target*: specifies where in the template file the new captured text
+  should be placed. There are a number of possible options, the most
+  straight forward of which is to append it to a file specified with
+  the syntax ~(file "path/to/file")~.
+- *Template*: this is the actual string that will be inserted in the
+  target location. Templates are "expanded" when inserted into a file,
+  such that certain character sequences are dynamically replaced at
+  the time it is inserted, using a kind of mini-templating language
+  for specifying parameters such as where point is placed within the
+  file, what text should be supplied by prompting the user, where
+  timestamps should be inserted, and other options.
 - *Properties*: a set of keywords that control various facets of how
   the capture template is handled.
 
-When represented as a list, which is how you define them in elisp. The
-format of the capture template is ~(key description type target template properties)~.
-There is much more to say about each of these
-components of a capture template, and I refer you to the [[https://orgmode.org/manual/Template-elements.html][official
-documentation]] for the complete description.
+Capture templates are specified as elisp lists, with the format
+~(key description type target template properties)~.  There is much more to
+each of these components of a capture template, and I refer you to the
+[[https://orgmode.org/manual/Template-elements.html][official documentation]] for the complete description.
 
 ** An Example
 
@@ -148,7 +147,7 @@ Let's say you regularly interact with a Kubernetes cluster using the
 which allows you to view the resources usage of Kubernetes nodes or
 pods. You want to make sure that you have that command handy for later
 should the need arise. You want to make it easy to remember how to
-find it by putting it in a "cheatsheet", a place where all your
+find it by putting it in a K8s cheatsheet, a place where all your
 Kubernetes related code snippets can be filed away, to be pulled back
 up when they are needed. You create a file named ~K8sCheatsheet.org~
 in your ~org-directory~. In your ~init.el~ file, you add a capture
@@ -186,7 +185,7 @@ right back to where you were. Now that snippet is available whenever
 you need it.
 
 So now we know how to capture a snippet of useful code for later
-us. You might be wondering what this interesting piece of the example
+use. You might be wondering what this interesting piece of the example
 is all about:
 
 #+BEGIN_EXAMPLE
@@ -232,37 +231,37 @@ kubectl top node
 
 Move the cursor over the command and hit ~C-c C-c~. You will
 be prompted to confirm that you want to run it. Enter
-~yes <RET>~ and the output appears below the command in a table format:
+~yes <RET>~ and the output appears below the command:
 
 #+BEGIN_EXAMPLE
 #+RESULTS:
 | NAME   | CPU(cores) | CPU% | MEMORY(bytes) | MEMORY% |
-| host   | 480m       |   3% | 61971Mi       |     48% |
+| node1  | 480m       |   3% | 61971Mi       |     48% |
 #+END_EXAMPLE
 
 Note that the pipe characters between each column are inserted by
 org-mode, which recognizes that the output is in a tabular format and
 adds table formatting.
 
-This is only the briefest introduction to org-mode babel, and of
-course if you do some digging you will find more possibilities of what
-you can do with it than you'll know what to do with. You can query a
-SQLite database and pass the results to [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Emacs Calc]]. You can query a
-RESTful API and send the response to a Python program. It is enough
-here to demonstrate that not only can you include snippets of code in
-an org-mode file, but you can execute them from within it as well.
+This is only the briefest introduction to org-mode Babel. Do some
+exploring and you will find possibilities of what you can do with it
+for any imaginable scenario. You can query a SQLite database and pass
+the results to [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Emacs Calc]]. You can query a RESTful API and send the
+response to a Python program. It is enough here to demonstrate that
+not only can you include snippets of code in an org-mode file, but you
+can execute them from within it as well.
 
 * Conclusion
 
 What we have demonstrated here is merely the tip of the Emacs
-iceberg. Digging deeper into org-mode, into its capabilities as a
-knowledge management format, into what you can do with org-mode
-capture templates and with Babel are all fruitful avenues of pursuit
-which we will not further pursue here. What I wanted to demonstrate
-here is how these various capabilities can be combined for the
-specific purpose of making it easy to capture snippets of code for
-later re-use, a practice I have found useful and is one more way in
-which Emacs supports my everyday work.
+iceberg. If this specific application intrigues you, there is plenty
+more digging you can do into org-mode, into its capabilities as a
+knowledge management format, into capture templates and code embedding
+with Babel, and plenty of other fruitful avenues of exploration. What
+I wanted to demonstrate here is how these various capabilities can be
+combined for the specific purpose of making it easy to capture
+snippets of code for later re-use, a practice I find useful and one
+more way in which Emacs supports my everyday work.
 
 * Resources
 - [[https://orgmode.org/][Org-mode documentation]]
