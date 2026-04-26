@@ -74,7 +74,7 @@ and publishing.
 One of those useful extensions based on org-mode is the capture
 functionality. This is a simple function that allows you to quickly
 stash away notes in a known location for later review. This allows you
-to capture ideas, code snippets, link or anything else you don't have
+to capture ideas, code snippets, links or anything else you don't have
 the time to explore or use immediately but which you don't want to
 lose track of.
 
