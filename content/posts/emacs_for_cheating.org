@@ -7,13 +7,13 @@ If you, like me, rarely go through a day in which you don't spend at
 least some time typing away at a command line, there are certain
 commands you use so frequently that they migrate into your fingertips.
 The terse, cryptic syntax of the CLI tools eventually become as
-natural and frictionless as speaking. But even the CLI tools you use
-every day likely support options that you never have a need for.
-Whatever your level of proficiency at the command line, it is gained
-not by mastering every command, or even any specific command. Rather,
-it is a matter of repetition, of learning what works for different
-situations that reoccur regularly, and of developing many individual
-habits that together constitute a skill set.
+natural and frictionless as speaking. But even the tools you use every
+day likely support options that you never have a need for.  Whatever
+your level of proficiency at the command line, it is gained not by
+mastering every command, or even any specific command. Rather, it is a
+matter of repetition, of learning what works for different situations
+that reoccur regularly, and of developing many individual habits that
+together constitute a skill set.
 
 You learn ~ls~ and a few of the arguments that modify its
 output, but you don't memorize the ~ls~ man page. And that is fine,
@@ -59,11 +59,11 @@ the computing world, it is simple and widely supported, so why learn
 another markup language?
 
 Org-mode is worth learning for the serious Emacs user because it is
-deeply embedded in the Emacs ecosystem. Just as the obvious choice for
-a markup language everywhere else is Markdown, the obvious choice for
-Emacs is org-mode. Naturally, Emacs works with Markdown nicely as
-well, but org-mode is deeply entrenched in the Emacs world, and an
-Emacs user is well served by taking the time to learn it. Once you are
+deeply entrenched in the Emacs ecosystem. Just as the obvious choice
+for a markup language everywhere else is Markdown, the obvious choice
+for Emacs is org-mode. Naturally, Emacs works with Markdown nicely as
+well, but org-mode is the standard in the Emacs world, and an Emacs
+user is well served by taking the time to learn it. Once you are
 comfortable finding your way around an org-mode file, you can then
 branch out into the myriad modes that use this format as the basis for
 all kinds of functions, from note taking to time tracking to writing
