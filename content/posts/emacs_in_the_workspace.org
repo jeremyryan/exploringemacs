@@ -1,0 +1,177 @@
+---
+title: "Emacs in the Workspace"
+date: 2026-06-14T06:41:01-04:00
+draft: false
+---
+
+* Beyond Tabs
+
+At the end of the previous year, [[/posts/keeping_tabs/][I wrote]] about Emacs's support for
+tabs, a simple convenience feature but one I thought worth pointing
+out because it is not enabled by default, at least not in GNU
+Emacs. After discovering Emacs's tabbing capability, it is now an
+essential part of my workspace management practice, something I turn
+on immediately after installing Emacs on a new system. But it also got
+me thinking about workspace management in a more general sense, and I
+realized that the framework of tabs, frames and windows as they are
+provided by Emacs are instances of a more general workspace management
+pattern. This will take us outside the focus on Emacs, but I think it
+is interesting and worth discussing. While exploring the world of
+Emacs is like visiting the Louvre, a vast space with interesting
+things to see at every step, here we will take a step outside the
+bounds of Emacs and discuss the bigger picture of desktop workflow.
+
+As I said in the aforementioned post, the benefit of tabs is that they
+let you easily switch between contexts without having to rebuild the
+context each time you need it. But the usefulness of having multiple
+workspaces that you can easily switch between is a more general
+workflow pattern that can be applied to your whole workspace. And
+beyond being able to switch between them is the ability to nest them,
+so that your visible workspace, basically whatever is visible on your
+screen, forms a multi-branch tree.
+
+* The Forest and the Trees
+
+A tree is a structure that connects related items via parent/child
+relationships. This arrangement provides a more flexible structure
+than, for example, a linear list in which items can only be accessed
+one after the other, while imposing more structure than a graph, in
+which any item can be connected to any other.
+
+When talking about trees as data structures, such as [[https://en.wikipedia.org/wiki/Binary_search_tree][binary-search
+trees]], imposing a structure provides guarantees about
+performance characteristics, such as the average time to find an item
+in a balanced tree of a certain size. When trees are applied as an
+organizational structure, it creates a hierarchy.
+
+Hierarchies have their pros and cons. They can be too rigid to reflect
+the reality of the multifarious ways that things are
+connected. Someone who is further down an organizational structure
+might have knowledge and capability that someone higher up lacks,
+despite their ostensible lower position. But it also allows you to
+create a regular organization, such that you know that if an item is
+present within a hierarchical structure, then if you start at the
+root and follow each branch, eventually you will find what you are
+looking for. 
+
+The obvious example of tree structured information organization is a
+file system. File systems are venerable old technologies that come
+from a time when directory trees were the best way to managed files on
+a disk, and we've been working with them since the beginning of
+personal computing. As information management systems, file systems
+have their benefits and drawbacks. You get used to the layout of a
+Linux system by repetition, not because it is especially intuitive.
+
+Beyond organizing files on disk, we also need a way to organize all of
+our application interfaces. What I am proposing here is that you can
+think of the organization of the visible, interactive areas in your
+computing environment as a tree, which I will call the
+"worktree". This is a conceptual tree formed by the heterogenous set
+of technologies used to navigate your digital workspace. 
+
+* The Worktree
+
+
+Before we get further into it, I'll lay out some of the terminology
+for this concept:
+
+- **Workspace**: This is the term I'm going to use for the whole of
+  of the visible "space" in your computing environment. This is the
+  root of the worktree, which doesn't correspond to any specific
+  display object but is conceptually what contains them all.
+- **Worktree**: The worktree is the conceptual tree structure formed
+  by all of the views within your computing environment, starting with
+  the workspace, then down to the desktops displayed in each, and then
+  the application windows displayed per desktop.
+- **View**: A view refers generically to whatever is currently visible
+  on the screen, the thing you are looking at. At a given time you are
+  looking at a certain monitor that is displaying a certain desktop
+  that is showing a certain number of application windows, and each of
+  those is considered a view for our purposes. Only the leaf views of
+  the tree are visible; the higher levels are transparent in the sense
+  that they are there for the purpose of organizing and displaying
+  leaf views.
+- **Desktop**: Most desktop enviornments today provide multiple
+  desktops per screen that you can switch between. Sometimes they are
+  called "workspaces" or just "spaces", but for our purposes we will
+  label them desktops.
+
+Let's say you have two monitors and four
+desktops configured in your system. Each desktop has a number of
+application windows. The first monitor is displaying Desktop 1 and the
+other Desktop 2:
+
+#+caption: Two monitors and four desktops
+[[/images/Monitor_Desktop_1.svg]]
+
+You then switch Monitor 2 to display Desktop 4, and your worktree
+looks like this:
+
+#+caption: Switching desktops
+[[/images/Monitor_Desktop_2.svg]]
+
+Because the desktops are mutually exclusive views, and you are only viewing
+one at a given time, they are what we could call "serial" views. Tabs
+would be another example of serial views.
+
+#+caption: Serial Views
+[[/images/Serial_Views.svg]]
+
+Within each desktop, you may have multiple application windows. They
+may overlap so that one is taking up the screen at a time, or they may
+be tiled so that you can view multiple within one screen. The latter
+case we will call "parallel" views, which are views that are arranged
+in a spacial relationship to one another within a parent view.
+
+#+caption: Parallel Views
+[[/images/Parallel_Views.svg]]
+
+Within each application window on your desktop, there can be
+arbitrarily many sub-views, serial or parallel, depending on the
+specific application. It may be a specific application with its own
+navigation scheme, or it might be a framework within which application
+interfaces can be display their own views.
+
+Three examples of the latter that will likely be familiar to the
+reader are the browser, tmux and Emacs. A web browser is a framework
+for web pages, which are arranged within tabs and, more recently, tab
+groups. The [[https://github.com/tmux/tmux/wiki][tmux]] terminal multiplexer is a TUI framework that allows
+you to run multiple command line applications within a set of panes,
+which can be displayed in parallel, and windows, which act as serial
+tab views. Then there is emacs, with its frames and windows layout for
+displaying content. Any degree of further nodes in the tree are
+possible, but beyond this point it is fully dependant on the
+particular application, whether web, CLI, TUI, or desktop.
+
+The benefit of thinking of your workspace as a tree is that it allows
+you to "chunk" together everything below a certain node. For example,
+you can devote each desktop to a different project, with multiple
+applications displayed in each, each related to that project. Let's
+say you are working on an application with a web interface. You have
+your browser displaying the site, a terminal window with tmux running
+the build process in one pane and claude in another, and Emacs open to
+view source diffs with [[https://magit.vc/][Magit]]. You decide you need to check your email,
+so you switch over to another desktop where your email client is
+running, then switch back when you are done, all without losing any
+context.
+
+#+caption: The Worktree
+[[/images/Worktree.svg]]
+
+* Conclusion
+
+Those of us who spend significant amounts of time working in the
+digital world generally are juggling multiple projects at once, and
+thinking about your workspace this like this is a way to apply some
+structure to that work. Navigating a virtual space requires applying
+the same spacial intuitions we use to navigate physical space. And
+just like maps and signposts help with wayfinding in physical space,
+mapping out your vitual space helps to navigate it.
+
+
+I know I am always in the middle of multiple projects at any given
+time, and anything that can help me navigate between them is
+helpful. This is especially true today when we are tasking
+semi-autonomous agents to go off and do things for us, and need to be
+able to keep track of all that work being done on our behalf.
+
