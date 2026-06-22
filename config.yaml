@@ -1,4 +1,8 @@
 baseURL: 'https://exploringemacs.org/'
 languageCode: 'en-us'
+defaultContentLanguage: 'en-us'
 title: 'Exploring Emacs'
 theme: 'github.com/hugo-sid/hugo-blog-awesome'
+params:
+  mainSections:
+    - posts
