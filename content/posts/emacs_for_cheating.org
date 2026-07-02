@@ -244,12 +244,12 @@ org-mode, which recognizes that the output is in a tabular format and
 adds table formatting.
 
 This is only the briefest introduction to org-mode Babel. Do some
-exploring and you will find possibilities of what you can do with it
-for any imaginable scenario. You can query a SQLite database and pass
-the results to [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Emacs Calc]]. You can query a RESTful API and send the
-response to a Python program. It is enough here to demonstrate that
-not only can you include snippets of code in an org-mode file, but you
-can execute them from within it as well.
+exploring and you will find a flexible framework with all kinds of
+possibilities, as you would expect from Emacs. You can query a SQLite
+database and pass the results to [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Emacs Calc]]. You can query a RESTful
+API and send the response to a Python program. It is enough here to
+demonstrate that not only can you include snippets of code in an
+org-mode file, but you can execute them from within it as well.
 
 * Conclusion
 

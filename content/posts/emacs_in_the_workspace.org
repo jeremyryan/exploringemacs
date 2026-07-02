@@ -8,69 +8,74 @@ draft: false
 
 At the end of the previous year, [[/posts/keeping_tabs/][I wrote]] about Emacs's support for
 tabs, a simple convenience feature but one I thought worth
-highlighting because it isn't enabled by default, at least not in GNU
-Emacs. After discovering Emacs's tabbing capability, it is now an
-essential part of my workspace management practice, something I turn
-on immediately after installing Emacs on a new system. But it also got
-me thinking about workspace management in a more general sense, and I
-realized that the framework of tabs, frames and windows as they are
-provided by Emacs are instances of a more general workspace management
-pattern. This will take us outside the focus on Emacs, but I think it
-is interesting and worth discussing. Exploring the world of
-Emacs is like visiting the Louvre, a vast space with interesting
-things to see at every step, here we will take a step outside the
-bounds of Emacs and discuss the bigger picture of desktop workflow.
+highlighting because it is useful and not enabled by default, at least
+not in GNU Emacs. It is certainly an essential part of my Emacs setup,
+something I turn on immediately after installing it on a new
+system. But it also got me thinking about workspace management in a
+more general sense, and I realized that the framework of tabs, frames
+and windows as they are implemented by Emacs are instances of a more
+general pattern, which is what I want to explore today.
+
+This will take us outside the focus on Emacs, but I think it is worth
+the detour. While exploring the world of Emacs is like visiting the
+Louvre, a vast space with interesting things to see at every step,
+here we will take a step outside those bounds and look at the bigger
+picture of desktop workflow.
 
 As I said in the aforementioned post, the benefit of tabs is that they
 let you easily switch between contexts without having to rebuild the
 context each time you need it. But the usefulness of having multiple
 workspaces that you can easily switch between is a more general
-workflow pattern that can be applied to your whole workspace. And
-beyond being able to switch between them is the ability to nest them,
-so that your visible workspace, basically whatever is visible on your
-screen, forms a multi-branch tree.
+workflow pattern that can be applied to your whole workspace. Being
+able to quickly switch between a set of views is a generally useful
+capability in a display, as well as the ability to nest views within a
+hierarchy.
 
 * The Forest and the Trees
 
 A tree is a structure that connects related items via parent/child
 relationships. This arrangement provides a more flexible structure
 than, for example, a linear list in which items can only be accessed
-one after the other, while imposing more structure than a graph, in
-which any item can be connected to any other.
+one after the other, while being more rigid than a graph, in which
+any item can be connected to any other.
 
 When talking about trees as data structures, such as [[https://en.wikipedia.org/wiki/Binary_search_tree][binary-search
 trees]], they provide guarantees about performance characteristics, such
 as the average time to find an item in a balanced tree of a certain
-size. When trees are applied as an organizational structure, it
-creates a hierarchy.
+size. When trees are use as an organizational structure, you have a
+hierarchy.
 
 Hierarchies have their pros and cons. They can be too rigid to reflect
-the reality of the multifarious ways that things are
-connected. Someone who is further down an organizational structure
-might have knowledge and capability that someone higher up lacks,
-despite their ostensible lower position. But it also allows you to
-create a regular organization, such that you know that if an item is
-present within a hierarchical structure, then if you start at the
-root and follow each branch, eventually you will find what you are
-looking for. 
+the reality of the multifarious ways that things are connected. They
+can be unbalanced, so that someone further down an organizational
+structure might have knowledge and capability that someone higher up
+lacks, despite their ostensible subordinate position. But it also
+allows you to create a regular organization, which cuts down on
+ambiguity. For example, you can assume that if you know an
+item is present within a hierarchical structure, then if you start at
+the root and follow each branch, eventually you will find what you are
+looking for.
 
 The obvious example of tree structured information organization is a
 file system. File systems are venerable old technologies that come
 from a time when directory trees were the best way to manage files on
-a disk, and we've been working with them since the beginning of
-personal computing. As information management systems, file systems
-have their benefits and drawbacks. You get used to the layout of a
-Linux system by repetition, not because it is especially intuitive.
+a disk. As information management systems, file systems have their
+benefits and drawbacks. It provides one view of the files in your
+system, while there may be multiple ways that you might want to access
+them for different situations. They can be obscure; you get used to
+the layout of a Linux system by repetition and because it is an
+established format, not because it is especially intuitive. But they
+are familiar, and we've been working with them since the beginning of
+personal computing.
 
-Beyond organizing files on disk, we also need a way to organize all of
-our application interfaces. What I am proposing here is that you can
-think of the organization of the visible interactive areas of your
-computing environment as a tree, which I will call the
-"worktree". This is a conceptual tree formed by the set of
-technologies used to navigate your digital workspace.
+Files need an organization, we also need a way to organize all of our
+application interfaces, the total view of your workspace. What I am
+proposing here is that you can think of the organization of the
+visible interactive areas of your computing environment as a tree,
+which I will call the "worktree". This is a conceptual tree formed by
+the set of technologies used to navigate your digital workspace.
 
 * The Worktree
-
 
 Before we get further into it, I'll lay out some of the terminology
 for this concept:
@@ -84,22 +89,21 @@ for this concept:
   the workspace, then down to the desktops displayed in each, and then
   the application windows displayed per desktop.
 - **View**: A view refers generically to whatever is currently visible
-  on the screen, the thing you are looking at. At a given time you are
-  looking at a certain monitor that is displaying a certain desktop
-  that is showing a certain number of application windows, and each of
-  those is considered a view for our purposes. Only the leaf views of
-  the tree are visible; the higher levels are transparent in the sense
-  that they are there for the purpose of organizing and displaying
-  leaf views.
+  on the screen. At a given time you are looking at a certain monitor
+  that is displaying a certain desktop that is showing a certain
+  number of application windows, and each of those is considered a
+  view for our purposes. Only the leaf views of the tree are visible;
+  the higher levels are transparent in the sense that they are there
+  for the purpose of organizing and displaying leaf views.
 - **Desktop**: Many desktop environments today provide multiple
   desktops per screen that you can switch between. Sometimes they are
   called "workspaces" or just "spaces", but for our purposes we will
   label them desktops.
 
-Let's say you have two monitors and four
-desktops configured in your system. Each desktop has a number of
-application windows. The first monitor is displaying Desktop 1 and the
-other Desktop 2:
+Let's say you have a setup with two monitors and four desktops
+configured in your system. Each desktop has a number of application
+windows. The first monitor is displaying Desktop 1 and the other
+Desktop 2:
 
 #+caption: Two monitors and four desktops
 [[/images/Monitor_Desktop_1.svg]]
@@ -128,20 +132,20 @@ spatially relative to one another within a parent view.
 
 Within each application window on your desktop, there can be
 arbitrarily many sub-views, serial or parallel, depending on the
-specific application. It may be a specific application with its own
-navigation scheme, or it might be a framework within which application
-interfaces can display their own views.
+specific application. It may be an application with its own navigation
+scheme, or it might be a framework within which application interfaces
+can display their own views. Three examples of the latter that will
+likely be familiar to the reader are the browser, tmux and Emacs.
 
-Three examples of the latter that will likely be familiar to the
-reader are the browser, tmux and Emacs. A web browser is a framework
-for web pages, which are arranged within tabs and, more recently, tab
-groups. The [[https://github.com/tmux/tmux/wiki][tmux]] terminal multiplexer is a TUI framework that allows
-you to run multiple command line applications within a set of panes,
-which can be displayed in parallel, and windows, which act as serial
-tab views. Then there is Emacs, with its frames and windows layout for
-displaying content. Any degree of further nodes in the tree are
-possible, but beyond this point it is fully dependent on the
-particular application, whether web, CLI, TUI, or desktop.
+A web browser is a framework for web pages, which are arranged within
+tabs, with the tabs possibly in groups. The [[https://github.com/tmux/tmux/wiki][tmux]] terminal multiplexer
+is a TUI framework that allows you to run multiple command shells
+within a set of panes, which can be displayed in parallel, and
+windows, which act as serial tab views. Then there is Emacs, with its
+frames and windows layout for displaying content. Any degree of
+further nodes in the tree are possible, but beyond this point it is
+fully dependent on the particular application, whether web, CLI, TUI,
+or desktop.
 
 The taxonomy we have laid out here is not meant to be exhaustive or
 definitive, as different operating systems, desktop environments and
@@ -155,12 +159,12 @@ you to "chunk" together everything below a certain node. For example,
 you can devote each desktop to a different project, with multiple
 applications displayed in each, each related to that project. Let's
 say you are working on an application with a web interface. You have
-your browser displaying the site, a terminal window with tmux running
-the build process in one pane and claude in another, and Emacs open to
-view source diffs with [[https://magit.vc/][Magit]]. You decide you need to check your email,
-so you switch over to another desktop where your email client is
-running, then switch back when you are done, all without losing any
-context.
+your browser displaying the running site, a terminal window with tmux
+running the build process in one pane and claude in another, and Emacs
+open to view source diffs with [[https://magit.vc/][Magit]]. You decide you need to check
+your email, so you switch over to another desktop where your email
+client is running, then switch back when you are done, all without
+losing any context.
 
 #+caption: The Worktree
 [[/images/Worktree.svg]]
@@ -168,18 +172,17 @@ context.
 * Conclusion
 
 Those of us who spend significant amounts of time working in the
-digital world generally are juggling multiple projects at once, and
+digital world are usually juggling multiple tasks at once, and
 thinking about your workspace like this is a way to apply some
 structure to that work. Navigating a virtual space requires applying
 the same spatial intuitions we use to navigate physical space. And
 just like maps and signposts help with wayfinding in physical space,
 mapping out your virtual space helps to navigate it.
 
-
 I know I am always in the middle of multiple projects at any given
 time, and anything that can help me navigate between them is
-helpful. This is especially true today when we are tasking
+helpful. This may be especially true today when we are tasking
 semi-autonomous agents to perform actions on our behalf, and need to
-be able to keep track of all that work being done by our worker bee
-agents.
+be able to keep track of all that work being done by our agentic
+worker bees as we switch from one hive to another.
 
