@@ -7,9 +7,9 @@ draft: false
 I have a hazy memory of the first time I ever fired up Emacs, not
 knowing my Meta key from my elbow. That was a long time ago now, but I
 vaguely recall the experience of having no idea how to do the first
-thing, not even opening a file, followed by many months of slowly
-developing fluency, building up my muscle memory of keystrokes along
-with a mental model of how Emacs works.
+thing, not even opening a file. This was followed by many months of
+slowly developing fluency, building up my muscle memory of keystrokes
+along with a mental model of how Emacs works.
 
 While Emacs contains immense potential for the experienced user, there
 is an initial investment of time and energy required before you can do
@@ -49,42 +49,41 @@ Emacs involves learning some new vocabulary.
 ** Buffers, Windows and Frames
 
 In Emacs terminology, a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Buffers.html][buffer]] is a data structure that stores text
-data, such as might be found in a file on disk containing source
-code. In Emacese, a buffer that holds data from a file is said to
-"visit" that file. But it is by no means limited to text files; it
-might be input to and output from a running program such as a shell;
-it might be information displayed by Emacs itself, such as command
-completion options. It includes the character data along with editor
-information such the mark, point and region, Emacs terms whose
-description will have to wait for another day.
+data, such as a file containing source code. In Emacese, a buffer that
+holds data from a file is said to "visit" that file. But it is by no
+means limited to text files; it might be input to and output from a
+running program such as a shell; it might be information displayed by
+Emacs itself, such as command completion options. It includes the
+character data along with editor information such the mark, point and
+region, Emacs terms whose description will have to wait for another
+day.
 
 To display a buffer, you need a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows.html][window]]. And here the terminology gets
 a little tricky, because a window in Emacs is not the familiar desktop
 environment window that can be opened, closed, minimized and resized.
 Emacs uses the term [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Frames.html][frame]] for that concept, while windows are the
 sections within the frame that display the contents of a particular
-buffer. Windows are also not exclusively tied to a buffer, and you can
-switch between the buffer displayed for a particular window at any time.
+buffer. Windows are not exclusively tied to a buffer, and a particular
+window can be displaying the content of any open buffer, which can be
+swapped for another buffer at the user's command.
 
-At any given time, Emacs can have any number of buffers open, and can
-be displaying all or a subset of them in windows within one or more
-frames. To put it in relational terms, windows have a one-to-one
-relationship to frames, while buffers have a one-to-many relationship to
-windows, in that multiple windows, potentially in multiple frames, can
-be displaying the contents of the same buffer. Learning to manage your
-buffers and windows is a basic Emacs skill, necessary for navigating
-Emacs's unique interface.
+In a running instance of Emacs, there are one or more frames, each of
+which contain one or more windows, each of which is displaying the
+content of a particular buffer. To put it in relational terms, windows
+have a one-to-one relationship to frames, while buffers have a
+one-to-many relationship to windows, in that multiple windows,
+potentially in multiple frames, can be displaying the contents of the
+same buffer. Learning to manage your buffers and windows is a basic
+Emacs skill, necessary for navigating Emacs's unique interface.
 
 #+CAPTION: Emacs frames, buffers and windows
 [[/images/Emacs_Frames_Buffers_Windows.svg]]
 
-One consequence of this arrangement is that a buffer does not
-necessarily have a window associated with it at any given time. This
-is another way that Emacs does not follow familiar conventions. What
-we expect when using, for example, Visual Studio Code, is that if you
-have a file open, then there is a tab open displaying its contents. In
-Emacs, any open buffer may not be currently displayed, or may be
-displayed in one or multiple windows.
+This arrangement does take some getting used to since it violates the
+expectations you develop from common convention, which is that each
+tab displays the content of a file, and when you are done working with
+that file you close the tab. In Emacs, an open buffer may be displayed
+in one, multple, or no windows.
 
 ** Window Layouts
 
@@ -113,17 +112,17 @@ you need some way to organize them while at the same time making them
 easy to access. A multi-level hierarchy of nested containers, such as
 in a file system, has its uses, but there are time when what you want
 is a simple organization scheme with no more than one level. Think
-about tools that you want at hand in a tool belt rather than a tool box
-where you would have to dig them out. When the tools you
-are talking about are files and programs, then you need some way of
-grouping them so that related items go in the same bucket. And that is
-what tab bar mode provides.
+about tools that you want at hand in a tool belt rather than a tool
+box you would have to dig them out of. When the tools you are talking
+about are files and programs, then you need some way of grouping them
+so that related items go in the same bucket. And that is what tab bar
+mode provides.
 
 Tabs mean being able to quickly switch between contexts, rather than
 being required to hunt through a list of open buffers and redoing your
 window layout with each context switch. This is nothing new of course,
 and Emacs was in a way late to this game, only incorporating the tab
-bar in version 27, released in 2020. This was likely because this
+bar in version 27, released in 2020. This is likely because this
 functionality was previously provided by various elisp packages, but
 in any case, it is so useful that it makes sense to include it out of
 the box.
@@ -131,18 +130,15 @@ the box.
 #+CAPTION: Multiple tabs with different window layouts
 [[/images/Emacs_tabs.drawio.svg]]
 
-Really the interface of tab-like boxes at the top of the screen is not
-strictly necessary, even if the interface is named after them. The
-important thing is the ability to quickly switch between window
-layouts, which like everything else in Emacs can all be done using the
-keyboard, using a set of key bindings similer to the ones used to
-navigate windows. You can create new tabs with ~C-x t 2~, close the
-current tab with ~C-x t 0~, and switch between them with ~C-<tab>~ and
-~C-S-<tab>~ selecting the next and previous tabs, respectively. By
-default, tabs are labeled with the name of the currently active buffer
-within that tab, but it is useful to apply a name based on what you
-have the tab configured for, which you can do with ~C-x t r <tab name>
-<RET>~.
+Like everything else in Emacs, working with tabs can be done
+exclusively using the keyboard, with a set of key bindings similer to
+the ones used to navigate windows. You can create new tabs with ~C-x t
+2~, close the current tab with ~C-x t 0~, and switch between them with
+~C-<tab>~ and ~C-S-<tab>~ selecting the next and previous tabs,
+respectively. By default, tabs are labeled with the name of the
+currently active buffer within that tab, but it is useful to apply a
+name based on what you have the tab configured for, which you can do
+with ~C-x t r <tab name> <RET>~.
 
 ** The Tab Line
 
